@@ -1,0 +1,1 @@
+Put a few JPEGs here for `board_test.sh`, which `tools\deploy.cmd` runs. Good choices are two spaghetti images from the dataset's test split and one frame of your printer printing normally. The repo leaves images out so it stays code only.

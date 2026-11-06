@@ -1,0 +1,13 @@
+Coral PrintWatch
+Licensed under the GNU Affero General Public License v3.0 (see LICENSE).
+
+board/failure_detect.py is adapted from detector.py in Synaptics' sl2610-examples
+(https://github.com/synaptics-astra-demos/sl2610-examples, jellectronica/), which is licensed under the
+Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0). Changes: 5-class output
+(9 channels), per-class NMS, quantization parameters read from quant_params.json.
+
+ml/convert_failures.sh follows the model conversion guide in the same repository
+(jellectronica/docs/model-conversion.md), changed to normalise boxes before decoding (see docs/model.md).
+
+The detector is trained with Ultralytics YOLOv8 (https://github.com/ultralytics/ultralytics, AGPL-3.0).
+Training data: Roboflow Universe "3D printing error" by cameteam, v2, MIT licence (not included).
