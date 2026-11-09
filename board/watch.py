@@ -1,4 +1,4 @@
-"""PrintWatch watch loop, MONITOR ONLY: watches a camera and logs what the failure detector sees.
+"""PrintWatcher watch loop, MONITOR ONLY: watches a camera and logs what the failure detector sees.
 It never pauses the printer or sends notifications; it only prints "WOULD ALERT" where step 3 would act.
 
 - A gst-launch child writes the camera into a ring of JPEGs in /dev/shm/pw_watch/:
@@ -97,7 +97,7 @@ def main():
     signal.signal(signal.SIGTERM, lambda *_: stop.append(1))
     signal.signal(signal.SIGHUP, lambda *_: stop.append(1))  # ssh closed
     source = f"USB {a.device} {a.size}" if a.camera == "usb" else f"Tapo stream{a.stream}"
-    print(f"PrintWatch MONITOR ONLY: {source}, every {a.interval:g} s, conf {a.conf}, "
+    print(f"PrintWatcher MONITOR ONLY: {source}, every {a.interval:g} s, conf {a.conf}, "
           f"alert after {a.streak} in a row. Logging to {run_dir}. Ctrl-C to stop.", flush=True)
 
     f = open(os.path.join(run_dir, "log.csv"), "w", newline="")

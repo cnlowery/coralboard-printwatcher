@@ -1,4 +1,4 @@
-"""Live view of a running PrintWatch watch loop, without touching the camera (watch.py owns it).
+"""Live view of a running PrintWatcher watch loop, without touching the camera (watch.py owns it).
 
 One ssh session (one password prompt) runs a loop on the board that sends each new review frame from the newest
 run's frames/ folder (640 px, one per check, the second-newest so it's never half-written) as a 10-digit length plus the JPEG bytes. This script writes the
@@ -21,7 +21,7 @@ BOARD_LOOP = (
     "if [ -n \"$f\" ] && [ \"$f\" != \"$last\" ]; then printf '%010d' $(wc -c < $f); cat $f; last=$f; fi; "
     "sleep 1; done"
 )
-PAGE = """<!doctype html><meta charset="utf-8"><title>PrintWatch live</title>
+PAGE = """<!doctype html><meta charset="utf-8"><title>PrintWatcher live</title>
 <style>body{margin:0;background:#111;color:#ccc;font:14px sans-serif;text-align:center}
 img{max-width:100%;max-height:92vh}</style>
 <img id="v" src="live.jpg"><div id="t"></div>

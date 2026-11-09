@@ -1,4 +1,4 @@
-"""PrintWatch print-failure detector, run on the CoralBoard NPU (Torq .vmfb from ml/convert_failures.sh).
+"""PrintWatcher print-failure detector, run on the CoralBoard NPU (Torq .vmfb from ml/convert_failures.sh).
 
 Adapted from Synaptics' sl2610-examples/jellectronica/detector.py (Apache-2.0, see NOTICE) (letterbox -> int8 -> Torq -> dequantize -> NMS). Changes:
 - 9 output channels: cx, cy, w, h (fractions of 320, with the letterbox padding) then 5 class scores;

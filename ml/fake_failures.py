@@ -26,7 +26,7 @@ def main():
     ap.add_argument("-o", "--out", required=True)
     a = ap.parse_args()
 
-    g = ["; PrintWatch fake failures (ml/fake_failures.py)", "G90", "M83",
+    g = ["; PrintWatcher fake failures (ml/fake_failures.py)", "G90", "M83",
          f"M118 PW heating to {a.temp}", f"M109 S{a.temp}", "M106 S255", "G1 Z50 F600"]
     e = round(SIDE * E_PER_MM, 3)
     for n, (x, y, z) in enumerate(SPOTS, 1):

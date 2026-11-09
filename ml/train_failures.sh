@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# PrintWatch print-failure detector: fine-tune YOLOv8n at 320 px on a Roboflow YOLOv8 export, in WSL Ubuntu 24.04.
+# PrintWatcher print-failure detector: fine-tune YOLOv8n at 320 px on a Roboflow YOLOv8 export, in WSL Ubuntu 24.04.
 # Venv and data live in WSL (~/venvs, ~/printwatch); results (best.pt, plots) are copied back to ml/runs/.
 #
 # Usage (from Windows): wsl -d Ubuntu -- bash "<path to this script>" setup <zip>   # venv + unpack dataset

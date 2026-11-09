@@ -11,7 +11,7 @@
 #   - IPv4 forwarding + NAT, so the board reaches the internet through eth0
 #   - Port forwards from the printer's LAN address to the board:
 #       2222 -> board:22   (ssh -p 2222 root@<printer>)
-#       8080 -> board:8080 (for a PrintWatch web page later)
+#       8080 -> board:8080 (for a PrintWatcher web page later)
 #
 # Usage (as root):  bash printer-coral-link.sh install | uninstall | status
 set -u

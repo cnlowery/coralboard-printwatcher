@@ -1,8 +1,8 @@
-# Coral PrintWatch: software
+# Coral PrintWatcher: software
 
 Print-failure detection that runs on a **Synaptics CoralBoard** (SL2610) next to a Klipper 3D printer. A USB camera on the toolhead looks at the nozzle. Every 2 seconds a YOLOv8n model on the board's NPU checks the newest frame for spaghetti. Nothing goes to the cloud.
 
-The printed case, top mount and camera mount are on Printables: **[Coral PrintWatch](PRINTABLES_LINK)**. This repo is only the software side.
+The printed case, top mount and camera mount are on Printables: **[Coral PrintWatcher](https://www.printables.com/model/1907730-coralboard-3d-printer-frame-mount-case)**. This repo is only the software side.
 
 > **Status: proof of concept, monitor only.** The watch loop detects failures and logs them. When one is found it prints `WOULD ALERT`, but it doesn't pause the printer or send notifications yet. See [What's next](#whats-next).
 

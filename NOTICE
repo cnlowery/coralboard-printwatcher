@@ -1,4 +1,4 @@
-Coral PrintWatch
+Coral PrintWatcher
 Licensed under the GNU Affero General Public License v3.0 (see LICENSE).
 
 board/failure_detect.py is adapted from detector.py in Synaptics' sl2610-examples

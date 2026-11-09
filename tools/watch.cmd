@@ -1,5 +1,5 @@
 @echo off
-rem Start the PrintWatch watch loop (MONITOR ONLY: logs detections, never pauses the printer) on the CoralBoard
+rem Start the PrintWatcher watch loop (MONITOR ONLY: logs detections, never pauses the printer) on the CoralBoard
 rem and show its live output here. Ctrl-C stops it. Closing this window also stops it (ssh hangs up).
 rem Options pass through to watch.py, e.g.:  watch.cmd --interval 2 --conf 0.25 --streak 3 --stream 2
 rem Afterwards, tools\watch_fetch.cmd copies the run (log.csv, frames, hits) back to runs\.
