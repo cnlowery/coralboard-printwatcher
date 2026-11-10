@@ -1,0 +1,20 @@
+[Unit]
+Description=PrintWatcher: spaghetti alerts for the printer (ntfy)
+# No network-online wait: on the CoralBoard it never arrives (enable --now hangs ~2 min), and the script retries anyway.
+After=network.target
+
+[Service]
+WorkingDirectory=/home/root/printwatch
+# Moonraker as the board sees it: the printer's end of the USB link, through nginx on port 80
+# (Moonraker is often set to host: localhost, so port 7125 only answers on the printer itself)
+Environment=PRINTWATCH_MOONRAKER=http://192.168.137.1
+# EDIT: the printer as the phone sees it, for the Pause and Fluidd buttons
+Environment=PRINTWATCH_PRINTER_URL=http://192.168.1.50
+# EDIT: your ntfy topic (a self-hosted server, or ntfy.sh with a hard-to-guess topic)
+Environment=PRINTWATCH_NTFY=https://ntfy.sh/your-secret-topic
+ExecStart=/home/root/sl2610-examples/.venv/bin/python3 -u printwatcher_service.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

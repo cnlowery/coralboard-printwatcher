@@ -13,7 +13,7 @@ if not defined PRINTWATCH_HOST (echo Set PRINTWATCH_HOST to your printer's addre
 set PRINTER=%PRINTWATCH_HOST%
 set ROOT=%~dp0..
 set OUT=%~dp0..\board\results
-set SEND=tar --format ustar -cf - -C "%ROOT%\models\cameteam_v8n_320" printwatch_failures_320_int8.vmfb quant_params.json -C "%ROOT%\board" failure_detect.py watch.py board_test.sh test_images
+set SEND=tar --format ustar -cf - -C "%ROOT%\models\cameteam_v8n_320" printwatch_failures_320_int8.vmfb quant_params.json -C "%ROOT%\board" failure_detect.py watch.py stream_frames.py printwatcher_service.py printwatcher.service board_test.sh test_images
 set UNPACK=mkdir -p /home/root/printwatch/runs ^&^& tar -xf - -C /home/root/printwatch
 if /i "%~1"=="copy" (
     %SEND% | ssh -p 2222 root@%PRINTER% "%UNPACK% && echo Copied to /home/root/printwatch"

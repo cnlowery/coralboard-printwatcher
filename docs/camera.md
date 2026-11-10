@@ -16,9 +16,13 @@
 tools\webcam_grab.cmd
 ```
 
-**Orientation:** in our mount the image comes out upside down. Use `watch.py --rotate 180`, or turn the camera in the mount.
+**Orientation:** in our current mount the image comes out the right way up. If yours is upside down, use `watch.py --rotate 180` and `watch_video.cmd rotate`, or turn the camera in the mount. The model doesn't mind much, but the pictures in alerts aren't rotated.
 
 **Framing:** the nozzle sits top-centre. While printing, the bed fills the rest of the frame.
+
+## Live video on the PC
+
+`tools\watch_video.cmd` (ffplay on PATH). `board/stream_frames.py` writes the newest ring frames back to back over ssh as raw MJPEG at 15 fps; nothing listens on the board. If the service (or `watch.py`) has the camera, it reads their ring; otherwise it opens the camera itself and closes it when the window closes. About 700 KB/s over the USB link at 1280x720.
 
 ## Grabbing a frame
 
